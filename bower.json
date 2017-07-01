@@ -1,0 +1,23 @@
+{
+  "name": "mood-meter",
+  "authors": [
+    "mike <kev@bernik.ru>"
+  ],
+  "description": "autogeneration",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chart.js": "^2.6.0",
+    "select2": "^4.0.3",
+    "moment": "^2.18.1"
+  }
+}
