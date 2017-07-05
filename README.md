@@ -1,11 +1,11 @@
-Yii 2 Basic Project Template
+Mood Meter uses Yii 2 Basic P1roject Template
 ============================
  
 
 REQUIREMENTS
 ------------
 
-The minimum requirement by this project template that your Web server supports PHP 5.4.0.
+The minimum requirement by this project template that your Web server supports PHP 5.4.0., composer, bower
 
 
 INSTALLATION

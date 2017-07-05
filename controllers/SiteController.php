@@ -78,9 +78,11 @@ class SiteController extends Controller {
 		return $this->render( 'index' );
 	}
 
-
-	public function actionX() {
-		return $this->render( 'x' );
+	/**
+	 * @return string
+	 */
+	public function actionFirstPage() {
+		return $this->render( 'first-page' );
 	}
 
 	/**
@@ -90,12 +92,12 @@ class SiteController extends Controller {
 	 */
 	public function actionLogin() {
 		if ( ! Yii::$app->user->isGuest ) {
-			return Yii::$app->getResponse()->redirect('/admin');
+			return Yii::$app->getResponse()->redirect( '/admin' );
 		}
 
 		$model = new LoginForm();
 		if ( $model->load( Yii::$app->request->post() ) && $model->login() ) {
-			return Yii::$app->getResponse()->redirect('/admin');
+			return Yii::$app->getResponse()->redirect( '/admin' );
 		}
 
 		return $this->render( 'login', [
@@ -141,6 +143,11 @@ class SiteController extends Controller {
 		return $this->render( 'about' );
 	}
 
+	/**
+	 * Method for handler ajax query with meter data
+	 *
+	 * @return string
+	 */
 	public function actionMeter() {
 		$bid      = $_POST['bid'];
 		$building = Building::find()->where( [ 'id' => $bid ] )->one();
@@ -150,12 +157,10 @@ class SiteController extends Controller {
 		$meter               = new Meter();
 		$meter->building_id  = $bid;
 		$meter->pleasantness = $_POST['pleasantness'];
-		$meter->energy       = $_POST['energy'] ;
+		$meter->energy       = $_POST['energy'];
 		if ( $meter->save() ) {
 			return 'ok';
 		}
-
-		return 'save error';
-
+		return 'saving error';
 	}
 }

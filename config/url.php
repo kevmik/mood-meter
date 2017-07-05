@@ -6,7 +6,7 @@ return [
     'enableStrictParsing' => true,
     'showScriptName' => false,
     'rules' => [
-    	'/'=>'site/x',
+    	'/'=>'site/first-page',
     	'admin'=>'admin/admin/index',
     	'meter'=>'site/meter',
     	'admin/index'=>'admin/admin/index',
@@ -16,9 +16,5 @@ return [
         'admin/<controller:\w+>' => 'admin/<controller>/index',
         'admin/<controller:\w+>/<action:\w+>' => 'admin/<controller>/<action>',
 		'/<buildingUrl:\w+>'=>'site/index'
-//        'admin/meter' => 'admin/meter/index',
-//        'admin/meter/index' => 'admin/meter/index',
-
-
     ]
 ];
